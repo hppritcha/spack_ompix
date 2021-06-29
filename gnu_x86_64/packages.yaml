@@ -1,0 +1,15 @@
+# vim: set sw=2 ft=yaml:
+
+packages:
+  all:
+    compiler: ['gcc@6.4.0']
+    target: ['x86_64']
+  git:
+    buildable: False
+    externals:
+    - spec: 'git@2.18.4'
+      prefix: '/usr'
+  openmpi:
+#   variants: ['~mpi']
+    version: ['master']
+
