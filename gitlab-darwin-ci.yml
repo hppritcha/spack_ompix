@@ -14,7 +14,7 @@ build:gnu:
     - module load gcc
     -  git clone git@github.com:spack/spack.git
     -  pushd spack
-    -  . etc/spack/spack-env.sh
+    -  . share/spack/setup-env.sh
     - spack env activate -d ../gnu_x86_64
     - spack concretize -f
     - spack install
