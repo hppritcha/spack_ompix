@@ -40,6 +40,11 @@ test:gnu:
   script:
     - pwd
     - module load gcc
+    - pushd spack
+    -  . share/spack/setup-env.sh
+    - spack env activate -d ../gnu_x86_64
+    - module use --apend share/spack/modules/linux-centos7-x86_64
+    - popd
     - source gnu_x86_64/loads
     - pushd tests
     - mpirun -np 4 hostname
