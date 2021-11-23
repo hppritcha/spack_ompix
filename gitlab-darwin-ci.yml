@@ -19,6 +19,8 @@ build:gnu:
     - spack concretize -f
     - spack install
     - spack env loads
+    - module use --append share/spack/modules/linux-centos7-x86_64
+    - module avail
     - popd
     - source gnu_x86_64/loads
     - pushd tests
@@ -43,7 +45,7 @@ test:gnu:
     - pushd spack
     -  . share/spack/setup-env.sh
     - spack env activate -d ../gnu_x86_64
-    - module use --apend share/spack/modules/linux-centos7-x86_64
+    - module use --append share/spack/modules/linux-centos7-x86_64
     - popd
     - source gnu_x86_64/loads
     - pushd tests
