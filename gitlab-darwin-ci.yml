@@ -18,6 +18,7 @@ build:gnu:
     - spack env activate -d ../gnu_x86_64
     - spack concretize -f
     - spack install
+    - spack env loads
     - popd
     - source gnu_x86_64/loads
     - pushd tests
