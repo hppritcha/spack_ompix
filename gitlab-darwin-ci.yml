@@ -93,7 +93,7 @@ test:release:
   stage: test
   tags: [darwin-slurm-shared]
   dependencies:
-    - build:release:
+    - build:release
   needs: ["build:release"]
   script:
     - pwd
