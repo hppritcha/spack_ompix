@@ -7,7 +7,7 @@ stages:
   - build
   - test
 
-build:gnu:
+build:master:
   stage: build
   tags: [darwin-slurm-shared]
   script:
@@ -15,14 +15,14 @@ build:gnu:
     -  git clone git@github.com:spack/spack.git
     -  pushd spack
     -  . share/spack/setup-env.sh
-    - spack env activate -d ../gnu_x86_64
+    - spack env activate -d ../gnu_master_x86_64
     - spack concretize -f
     - spack install
     - spack env loads
     - module use --append $PWD/share/spack/modules/linux-centos7-x86_64
     - module avail
     - popd
-    - source gnu_x86_64/loads
+    - source gnu_master_x86_64/loads
     - pushd tests
     - make
   artifacts:
@@ -33,7 +33,7 @@ build:gnu:
       - tests
     expire_in: 1 week
 
-test:gnu:
+test:master:
   stage: test
   tags: [darwin-slurm-shared]
   dependencies:
@@ -44,10 +44,10 @@ test:gnu:
     - module load gcc
     - pushd spack
     -  . share/spack/setup-env.sh
-    - spack env activate -d ../gnu_x86_64
+    - spack env activate -d ../gnu_master_x86_64
     - module use --append $PWD/share/spack/modules/linux-centos7-x86_64
     - popd
-    - source gnu_x86_64/loads
+    - source gnu_master_x86_64/loads
     - pushd tests
     - mpirun -np 4 hostname
     - mpirun -np 4 ./hello_c
