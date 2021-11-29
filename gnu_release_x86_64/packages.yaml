@@ -9,5 +9,3 @@ packages:
     externals:
     - spec: 'git@2.18.4'
       prefix: '/usr'
-  openmpi:
-#   variants: ['~mpi']
