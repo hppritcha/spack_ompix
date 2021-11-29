@@ -37,8 +37,8 @@ test:master:
   stage: test
   tags: [darwin-slurm-shared]
   dependencies:
-    - build:gnu
-  needs: ["build:gnu"]
+    - build:master
+  needs: ["build:master"]
   script:
     - pwd
     - module load gcc
