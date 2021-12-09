@@ -119,6 +119,10 @@ test:release:
     - mpirun -np 4 ./hello_usempif08
     - mpirun -np 4 ./ring_usempif08
     - mpirun -np 4 ./connectivity_c
+    - popd
+    - git clone https://github.com/E4S-Project/testsuite
+    - pushd testsuite
+    - ./test-all.sh --color-off ./validation_tests/openmpi
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
     expire_in: 1 week
