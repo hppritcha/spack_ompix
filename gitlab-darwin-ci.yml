@@ -88,7 +88,7 @@ test:master:
     - popd
     - git clone https://github.com/E4S-Project/testsuite
     - pushd testsuite
-    - ./test-all.sh ./validation_tests/openmpi
+    - ./test-all.sh --color-off ./validation_tests/openmpi
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
     expire_in: 1 week
