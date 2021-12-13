@@ -44,7 +44,7 @@ build:master:
     untracked: true
     expire_in: 1 week
 
-build:release
+build:release:
   stage: build
   tags: [jlsebatch2,shell]
   script:
