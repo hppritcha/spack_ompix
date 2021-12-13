@@ -1,0 +1,71 @@
+variables:
+  GIT_STRATEGY: clone
+  NPROCS: 4
+
+stages:
+  - build
+  - test
+
+build:master:
+  stage: build
+  tags: [jlsebatch2
+  script:
+    - module load oneapi
+    -  git clone git@github.com:spack/spack.git
+    -  pushd spack
+    -  . share/spack/setup-env.sh
+    - spack env activate -d ../intel_master_x86_64
+    - spack concretize -f
+    - spack install
+    - spack env loads
+    - module use --append $PWD/share/spack/modules/linux-opensuse_leap15-x86_64
+    - module avail
+    - popd
+    - source intel_master_x86_64/loads
+    - pushd tests
+    - make
+  variables:
+    JLSE_SCHEDULER_PARAMETERS: "-qarcticus -t 1:00:00 -n 1"
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
+    untracked: true
+    paths:
+      - spack
+      - tests
+    expire_in: 1 week
+
+test:master:
+  stage: test
+  tags: [jlsebatch2
+  dependencies:
+    - build:master
+  needs: ["build:master"]
+  script:
+    - pwd
+    - module load oneapi
+    - pushd spack
+    -  . share/spack/setup-env.sh
+    - spack env activate -d ../intel_master_x86_64
+    - module use --append $PWD/share/spack/modules/linux-opensuse_leap15-x86_64
+    - popd
+    - source intel_master_x86_64/loads
+    - pushd tests
+    - mpirun -np 4 hostname
+    - mpirun -np 4 ./hello_c
+    - mpirun -np 4 ./ring_c
+    - mpirun -np 4 ./hello_mpifh
+    - mpirun -np 4 ./ring_mpifh
+    - mpirun -np 4 ./hello_usempi
+    - mpirun -np 4 ./ring_usempi
+    - mpirun -np 4 ./hello_usempif08
+    - mpirun -np 4 ./ring_usempif08
+    - mpirun -np 4 ./connectivity_c
+    - popd
+    - git clone https://github.com/E4S-Project/testsuite
+    - pushd testsuite
+    - ./test-all.sh --color-off ./validation_tests/openmpi
+  variables:
+    JLSE_SCHEDULER_PARAMETERS: "-qarcticus -t 1:00:00 -n 1"
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
+    expire_in: 1 week
