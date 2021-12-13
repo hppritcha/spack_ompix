@@ -1,0 +1,20 @@
+# vim: set sw=2 ft=yaml:
+
+compilers::
+- compiler:
+    spec: oneapi@2022.1.0
+    paths:
+      cc: icx
+      cxx: icpx
+      f77: ifx
+      fc: ifx
+    flags:
+      cflags: -fPIC
+      cxxflags: -fPIC
+      fflags: -fPIC
+    operating_system: opensuse_leap15
+    modules:
+    - oneapi/eng-compiler/2021.10.30.003
+    target: x86_64
+    environment: {}
+    extra_rpaths: []
