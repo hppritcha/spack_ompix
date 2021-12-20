@@ -1,5 +1,5 @@
 variables:
-  SCHEDULER_PARAMETERS: "-pgeneral -t 1:00:00 -N 1 --ntasks-per-node=16"
+  SCHEDULER_PARAMETERS: "-pgeneral -t 3:00:00 -N 1 --ntasks-per-node=16"
   GIT_STRATEGY: clone
   NPROCS: 4
 
