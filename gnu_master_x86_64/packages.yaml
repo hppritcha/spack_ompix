@@ -11,5 +11,5 @@ packages:
       prefix: '/usr'
   openmpi:
 #   variants: ['~mpi']
-    version: ['master']
+    version: ['main']
 

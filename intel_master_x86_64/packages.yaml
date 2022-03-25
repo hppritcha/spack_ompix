@@ -11,5 +11,5 @@ packages:
       prefix: '/usr'
   openmpi:
     variants: ['~romio','+internal-hwloc','fabrics=ofi']
-    version: ['master']
+    version: ['main']
 
