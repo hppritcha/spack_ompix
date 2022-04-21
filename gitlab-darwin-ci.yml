@@ -19,7 +19,7 @@ build:master:
     - spack concretize -f
     - spack install --verbose --fail-fast
     - spack env loads
-    - module use --append $PWD/share/spack/modules/linux-centos8-x86_64
+    - module use --append $PWD/share/spack/modules/linux-rhel8-x86_64
     - module avail
     - popd
     - source gnu_master_x86_64/loads
@@ -45,7 +45,7 @@ build:release:
     - spack concretize -f
     - spack install
     - spack env loads
-    - module use --append $PWD/share/spack/modules/linux-centos8-x86_64
+    - module use --append $PWD/share/spack/modules/linux-rhel8-x86_64
     - module avail
     - popd
     - source gnu_release_x86_64/loads
@@ -71,7 +71,7 @@ test:master:
     - pushd spack
     -  . share/spack/setup-env.sh
     - spack env activate -d ../gnu_master_x86_64
-    - module use --append $PWD/share/spack/modules/linux-centos8-x86_64
+    - module use --append $PWD/share/spack/modules/linux-rhel8-x86_64
     - popd
     - source gnu_master_x86_64/loads
     - pushd tests
@@ -105,7 +105,7 @@ test:release:
     - pushd spack
     -  . share/spack/setup-env.sh
     - spack env activate -d ../gnu_release_x86_64
-    - module use --append $PWD/share/spack/modules/linux-centos8-x86_64
+    - module use --append $PWD/share/spack/modules/linux-rhel8-x86_64
     - popd
     - source gnu_release_x86_64/loads
     - pushd tests
