@@ -12,7 +12,7 @@ compilers::
       cflags: -fPIC
       cxxflags: -fPIC
       fflags: -fPIC
-    operating_system: centos8
+    operating_system: rhel8
     target: x86_64
     modules: []
     environment: {}
