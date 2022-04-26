@@ -17,7 +17,7 @@ build:master:
     -  . share/spack/setup-env.sh
     - spack env activate -d ../gnu_master_x86_64
     - spack concretize -f
-    - spack install --verbose --fail-fast
+    - spack install --fail-fast
     - spack env loads
     - module use --append $PWD/share/spack/modules/linux-rhel8-x86_64
     - module avail
