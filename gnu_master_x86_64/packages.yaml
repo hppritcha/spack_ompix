@@ -12,4 +12,14 @@ packages:
   openmpi:
     variants: ['+atomics']
     version: ['main']
+  pmix:
+    version: ['master']
+  munge:
+    externals:
+    - spec: 'munge@0.5.13'
+      prefix: '/usr'
+  pkgconfig:
+    externals:
+    - spec: 'pkgconf@1.4.2'
+      prefix: '/usr'
 
