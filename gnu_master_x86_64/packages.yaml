@@ -10,7 +10,7 @@ packages:
     - spec: 'git@2.18.4'
       prefix: '/usr'
   openmpi:
-    variants: ['+atomics']
+    variants: ['+atomics','+pmix']
     version: ['main']
   pmix:
     version: ['master']
