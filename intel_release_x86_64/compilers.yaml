@@ -2,7 +2,7 @@
 
 compilers::
 - compiler:
-    spec: oneapi@2022.1.0
+    spec: oneapi@2022.1.2
     paths:
       cc: icx
       cxx: icpx
@@ -14,7 +14,9 @@ compilers::
       fflags: -fPIC
     operating_system: opensuse_leap15
     modules:
-    - oneapi/eng-compiler/2021.10.30.003
+    - oneapi/eng-compiler/2022.01.30.005
     target: x86_64
-    environment: {}
+    environment:
+      set:
+        SPACK_TARGET_ARGS: "-march=x86-64 -mtune=generic"
     extra_rpaths: []
