@@ -8,6 +8,7 @@ stages:
 build:master:
   stage: build
   tags: [jlsebatch2,shell]
+  needs: ["build:release"]
   script:
     - module load oneapi
     -  git clone git@github.com:spack/spack.git
