@@ -11,11 +11,12 @@ build:master:
   stage: build
   tags: [darwin-slurm-shared]
   script:
+    - export SPACK_DISABLE_LOCAL_CONFIG=true
+    - export SPACK_USER_CACHE_PATH=$PWD/spack_cache
     - module load gcc
     -  git clone git@github.com:spack/spack.git
     -  pushd spack
     -  . share/spack/setup-env.sh
-    - spack clean --all
     - spack env activate -d ../gnu_master_x86_64
     - spack concretize -f
     - spack install --fail-fast
@@ -40,6 +41,8 @@ build:release:
   dependencies:
     - build:master
   script:
+    - export SPACK_DISABLE_LOCAL_CONFIG=true
+    - export SPACK_USER_CACHE_PATH=$PWD/spack_cache
     - module load gcc
     -  git clone git@github.com:spack/spack.git
     -  pushd spack
