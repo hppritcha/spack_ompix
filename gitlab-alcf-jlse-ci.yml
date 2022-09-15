@@ -16,7 +16,7 @@ build:master:
     -  . share/spack/setup-env.sh
     - spack env activate -d ../intel_master_x86_64
     - spack concretize -f
-    - spack install --fail-fast
+    - spack install --fail-fast --verbose
     - spack env loads
     - module use --append $PWD/share/spack/modules/linux-opensuse_leap15-x86_64
     - module avail
@@ -55,7 +55,7 @@ build:release:
     -  . share/spack/setup-env.sh
     - spack env activate -d ../intel_release_x86_64
     - spack concretize -f
-    - spack install --fail-fast
+    - spack install --fail-fast --verbose
     - spack env loads
     - module use --append $PWD/share/spack/modules/linux-opensuse_leap15-x86_64
     - module avail
