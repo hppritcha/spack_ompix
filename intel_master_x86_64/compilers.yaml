@@ -20,3 +20,18 @@ compilers::
       set:
         SPACK_TARGET_ARGS: "-march=x86-64 -mtune=generic"
     extra_rpaths: []
+- compiler:
+    spec: gcc@10.2.0
+    paths:
+      cc: /soft/packaging/spack-builds/linux-opensuse_leap15-x86_64/gcc-10.2.0/gcc-10.2.0-yudlyezca7twgd5o3wkkraur7wdbngdn/bin/gcc
+      cxx: /soft/packaging/spack-builds/linux-opensuse_leap15-x86_64/gcc-10.2.0/gcc-10.2.0-yudlyezca7twgd5o3wkkraur7wdbngdn/bin/g++
+      f77: /soft/packaging/spack-builds/linux-opensuse_leap15-x86_64/gcc-10.2.0/gcc-10.2.0-yudlyezca7twgd5o3wkkraur7wdbngdn/bin/gfortran
+      fc: /soft/packaging/spack-builds/linux-opensuse_leap15-x86_64/gcc-10.2.0/gcc-10.2.0-yudlyezca7twgd5o3wkkraur7wdbngdn/bin/gfortran
+    flags: {}
+    operating_system: opensuse_leap15
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+
+

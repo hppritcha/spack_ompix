@@ -2,7 +2,6 @@
 
 packages:
   all:
-    compiler: ['gcc@6.4.0']
     target: ['x86_64']
   git:
     buildable: False
