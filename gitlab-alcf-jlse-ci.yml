@@ -8,7 +8,6 @@ stages:
 build:master:
   stage: build
   tags: [jlsebatch2,shell]
-  needs: ["build:release"]
   script:
     - module load oneapi
     - export SPACK_DISABLE_LOCAL_CONFIG=true
