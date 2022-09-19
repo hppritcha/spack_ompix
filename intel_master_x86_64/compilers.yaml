@@ -9,8 +9,8 @@ compilers::
       f77: ifx
       fc: ifx
     flags:
-      cflags: -fPIC
-      cxxflags: -fPIC
+      cflags: -fPIC -Wno-error=implicit-function-declaration
+      cxxflags: -fPIC -Wno-error=implicit-function-declaration
       fflags: -fPIC
     operating_system: opensuse_leap15
     modules:
