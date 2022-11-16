@@ -8,9 +8,10 @@ stages:
 build:master:
   stage: build
   tags: [jlsebatch2,shell]
-  needs: ["build:release"]
   script:
     - module load oneapi
+    - export SPACK_DISABLE_LOCAL_CONFIG=true
+    - export SPACK_USER_CACHE_PATH=$PWD/spack_cache
     -  git clone git@github.com:spack/spack.git
     -  pushd spack
     -  . share/spack/setup-env.sh
@@ -50,6 +51,8 @@ build:release:
   tags: [jlsebatch2,shell]
   script:
     - module load oneapi
+    - export SPACK_DISABLE_LOCAL_CONFIG=true
+    - export SPACK_USER_CACHE_PATH=$PWD/spack_cache
     -  git clone git@github.com:spack/spack.git
     -  pushd spack
     -  . share/spack/setup-env.sh
