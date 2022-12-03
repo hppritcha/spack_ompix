@@ -20,7 +20,3 @@ spack:
     unify: true
   upstreams: {}
   mirrors: {}
-  modules:
-    enable: []
-  packages: {}
-  repos: []
