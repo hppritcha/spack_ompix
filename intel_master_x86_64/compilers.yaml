@@ -14,7 +14,7 @@ compilers::
       fflags: -fPIC
     operating_system: opensuse_leap15
     modules:
-    - oneapi/eng-compiler/2022.10.15.006
+    - oneapi/eng-compiler/latest
     target: x86_64
     environment:
       set:
