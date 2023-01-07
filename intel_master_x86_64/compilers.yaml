@@ -33,5 +33,19 @@ compilers::
     modules: []
     environment: {}
     extra_rpaths: []
+- compiler:
+    spec: gcc@12.1.0
+    paths:
+      cc: /soft/compilers/gcc/12.1.0/x86_64-suse-linux/bin/gcc
+      cxx: /soft/compilers/gcc/12.1.0/x86_64-suse-linux/bin/g++
+      f77: /soft/compilers/gcc/12.1.0/x86_64-suse-linux/bin/gfortran
+      fc: /soft/compilers/gcc/12.1.0/x86_64-suse-linux/bin/gfortran
+    flags: {}
+    operating_system: opensuse_leap15
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+
 
 
