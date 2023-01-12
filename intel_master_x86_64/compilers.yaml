@@ -2,7 +2,7 @@
 
 compilers::
 - compiler:
-    spec: oneapi@2022.1.2
+    spec: oneapi@2023.1.0
     paths:
       cc: icx
       cxx: icpx
@@ -12,7 +12,7 @@ compilers::
       cflags: -fPIC -Wno-error=implicit-function-declaration
       cxxflags: -fPIC -Wno-error=implicit-function-declaration
       fflags: -fPIC
-    operating_system: opensuse_leap15
+    operating_system: opensuse15
     modules:
     - oneapi/eng-compiler/latest
     target: x86_64
@@ -28,7 +28,7 @@ compilers::
       f77: /soft/packaging/spack-builds/linux-opensuse_leap15-x86_64/gcc-10.2.0/gcc-10.2.0-yudlyezca7twgd5o3wkkraur7wdbngdn/bin/gfortran
       fc: /soft/packaging/spack-builds/linux-opensuse_leap15-x86_64/gcc-10.2.0/gcc-10.2.0-yudlyezca7twgd5o3wkkraur7wdbngdn/bin/gfortran
     flags: {}
-    operating_system: opensuse_leap15
+    operating_system: opensuse15
     target: x86_64
     modules: []
     environment: {}
@@ -41,7 +41,7 @@ compilers::
       f77: /soft/compilers/gcc/12.1.0/x86_64-suse-linux/bin/gfortran
       fc: /soft/compilers/gcc/12.1.0/x86_64-suse-linux/bin/gfortran
     flags: {}
-    operating_system: opensuse_leap15
+    operating_system: opensuse15
     target: x86_64
     modules: []
     environment: {}
