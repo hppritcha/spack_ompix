@@ -19,6 +19,7 @@ build:master:
     - spack concretize -f
     - spack install --fail-fast --verbose
     - spack env loads
+    - ls $PWD/share/spack/modules
     - module use --append $PWD/share/spack/modules/linux-opensuse_leap15-x86_64
     - module avail
     - popd
