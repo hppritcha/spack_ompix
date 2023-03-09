@@ -11,7 +11,7 @@ build:master:
   script:
     - module load oneapi
     - export SPACK_DISABLE_LOCAL_CONFIG=true
-    - export SPACK_USER_CACHE_PATH=$PWD/spack_cache_master
+    - export SPACK_USER_CACHE_PATH=$PWD/sc_m
     -  git clone git@github.com:spack/spack.git
     -  pushd spack
     -  . share/spack/setup-env.sh
@@ -55,7 +55,7 @@ build:release:
   script:
     - module load oneapi
     - export SPACK_DISABLE_LOCAL_CONFIG=true
-    - export SPACK_USER_CACHE_PATH=$PWD/spack_cache_release
+    - export SPACK_USER_CACHE_PATH=$PWD/sc_r
     - rm -f -r spack
     -  git clone git@github.com:spack/spack.git
     -  pushd spack
