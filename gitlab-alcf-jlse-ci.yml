@@ -3,10 +3,11 @@ variables:
   NPROCS: 4
 
 stages:
-  - build
+  - build_m
+  - build_r
 
 build:master:
-  stage: build
+  stage: build_m
   tags: [jlsebatch2,shell]
   script:
     - module load oneapi
@@ -48,7 +49,7 @@ build:master:
     expire_in: 1 week
 
 build:release:
-  stage: build
+  stage: build_r
   tags: [jlsebatch2,shell]
   dependencies:
     - build:master
