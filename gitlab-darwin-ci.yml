@@ -20,6 +20,7 @@ build:master:
     - spack env activate -d ../gnu_master_x86_64
     - spack concretize -f
     - spack install --fail-fast
+    - spack module tcl refresh --yes-to-all
     - spack env loads
     - module use --append $PWD/share/spack/modules/linux-rhel8-x86_64
     - module avail
@@ -49,7 +50,8 @@ build:release:
     -  . share/spack/setup-env.sh
     - spack env activate -d ../gnu_release_x86_64
     - spack concretize -f
-    - spack install
+    - spack install --fail-fast
+    - spack module tcl refresh --yes-to-all
     - spack env loads
     - module use --append $PWD/share/spack/modules/linux-rhel8-x86_64
     - module avail
