@@ -19,6 +19,7 @@ build:master:
     - spack env activate -d ../intel_master_x86_64
     - spack concretize -f
     - spack install --fail-fast
+    - spack module tcl refresh --yes-to-all
     - spack env loads
     - ls $PWD/share/spack/modules
     - module use --append $PWD/share/spack/modules/linux-opensuse15-x86_64
@@ -64,6 +65,7 @@ build:release:
     - spack env activate -d ../intel_release_x86_64
     - spack concretize -f
     - spack install --fail-fast
+    - spack module tcl refresh --yes-to-all
     - spack env loads
     - module use --append $PWD/share/spack/modules/linux-opensuse15-x86_64
     - module avail
