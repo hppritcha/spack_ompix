@@ -11,6 +11,11 @@ spack:
     unify: true
   upstreams: {}
   mirrors: {}
-  modules: {}
   packages: {}
   repos: []
+  modules:
+    default:
+      enable:
+        - tcl
+
+

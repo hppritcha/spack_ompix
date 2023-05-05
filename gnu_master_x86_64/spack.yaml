@@ -13,3 +13,9 @@ spack:
   mirrors: {}
   packages: {}
   repos: []
+  modules:
+    default:
+      enable:
+        - tcl
+
+
