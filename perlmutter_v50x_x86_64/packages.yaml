@@ -1,0 +1,45 @@
+# vim: set sw=2 ft=yaml:
+
+packages:
+  all:
+    compiler: ['gcc@12.2.0']
+    target: ['x86_64']
+  git:
+    buildable: False
+    externals:
+    - spec: 'git@2.18.4'
+      prefix: '/usr'
+  hwloc:
+    buildable: False
+    externals:
+    - spec: 'hwloc@2.8.0'
+      prefix: '/usr'
+  libevent:
+    buildable: False
+    externals:
+    - spec: 'libevent@2.1.8'
+      prefix: '/usr'
+  openmpi:
+    variants: ['+atomics','+pmix','fabrics=auto','+legacylaunchers','schedulers=auto']
+    version: ['main']
+  munge:
+    buildable: False
+    externals:
+    - spec: 'munge@0.5.13'
+      prefix: '/usr'
+  openssl:
+    buildable: False
+    externals:
+    - spec: 'openssl@1.1.1l'
+      prefix: '/usr'
+  pkgconfig:
+    buildable: False
+    externals:
+    - spec: 'pkgconf@1.4.2'
+      prefix: '/usr'
+  pmix:
+    buildable: False
+    externals:
+    - spec: 'pmix@4.2.3'
+      prefix: '/usr'
+

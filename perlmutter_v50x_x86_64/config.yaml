@@ -1,0 +1,6 @@
+# vim: set sw=2 ft=yaml:
+#
+config:
+  # If set to true, Spack will always check checksums after downloading
+  # archives. If false, Spack skips the checksum step.
+  checksum: false
