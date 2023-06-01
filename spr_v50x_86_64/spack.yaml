@@ -1,0 +1,27 @@
+# vim: set sw=2 ft=yaml:
+
+spack:
+  include:
+  - ./
+  definitions: []
+  specs:
+  - openmpi@5.0.0
+  view: false
+  concretizer:
+    unify: true
+  upstreams: {}
+  mirrors: {}
+  packages: {}
+  repos: []
+  modules:
+    default:
+      enable:
+        - tcl
+      tcl:
+        openmpi:
+          environment:
+            set:
+              'PRTE_MCA_ras_slurm_use_entire_allocation': '1'
+              'PRTE_MCA_ras_base_launch_orted_on_hn': '1'
+
+
