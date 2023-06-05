@@ -1,2 +1,0 @@
-# openmpi@master%oneapi@2022.1.0 cflags="-fPIC" cxxflags="-fPIC" fflags="-fPIC" ~atomics~cuda~cxx~cxx_exceptions+gpfs+internal-hwloc~java~legacylaunchers~lustre~memchecker~pmi~pmix~romio~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=ofi schedulers=none arch=linux-opensuse_leap15-x86_64
-module load openmpi-master-oneapi-2022.1.0-lvhxbz3
