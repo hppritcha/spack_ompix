@@ -9,7 +9,7 @@ packages:
     - spec: 'git@2.18.4'
       prefix: '/usr'
   openmpi:
-    variants: ['~romio','fabrics=ofi']
+    variants: ['~romio','fabrics=ofi','+atomics']
     version: ['main']
   openssh:
     buildable: False
