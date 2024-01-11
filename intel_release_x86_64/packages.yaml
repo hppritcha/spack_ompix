@@ -10,7 +10,7 @@ packages:
     - spec: 'git@2.18.4'
       prefix: '/usr'
   openmpi:
-    variants: ['~romio','+internal-hwloc','fabrics=ofi']
+    variants: ['~romio','fabrics=ofi']
   openssh:
     buildable: False
     externals:
