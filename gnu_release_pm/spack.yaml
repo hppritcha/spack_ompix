@@ -1,0 +1,21 @@
+# vim: set sw=2 ft=yaml:
+
+spack:
+  include:
+  - ./
+  definitions: []
+  specs:
+  - openmpi % gcc
+  view: false
+  concretizer:
+    unify: true
+  upstreams: {}
+  mirrors: {}
+  packages: {}
+  repos: []
+  modules:
+    default:
+      enable:
+        - tcl
+
+

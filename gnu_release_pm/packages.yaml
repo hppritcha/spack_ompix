@@ -1,0 +1,22 @@
+# vim: set sw=2 ft=yaml:
+
+packages:
+  all:
+    compiler: ['gcc@9.4.0']
+    target: ['x86_64']
+  git:
+    buildable: False
+    externals:
+    - spec: 'git@2.18.4'
+      prefix: '/usr'
+  openmpi:
+    require: '@5.0.3'
+    variants: ['fabrics=ofi,xpmem,cma', '+orterunprefix', 'schedulers=auto', '+legacylaunchers', '+internal-pmix']
+  libfabric:
+    buildable: False
+    externals:
+    - spec: 'libfabric@1.15.2.0'
+      modules:
+      - libfabric/1.15.2.0
+    require: '@1.15.2.0'
+

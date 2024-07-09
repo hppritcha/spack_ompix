@@ -1,0 +1,31 @@
+
+modules:
+  default:
+    enable:
+      - tcl
+    tcl:
+      projections:
+        all: '{name}/{version}-{compiler.name}-{compiler.version}'
+      include:
+        - 'gcc'
+      exclude:
+        - 'cray-mpich'
+        - 'git'
+        - 'libfabric'
+        - 'openssl'
+      all:
+        autoload: 'none'
+      openmpi:
+        environment:
+          set:
+            'FI_CXI_RX_MATCH_MODE': 'software'
+            'FI_PROVIDER': 'cxi'
+            'OMPI_MCA_btl_ofi_disable_sep': 'true'
+            'OMPI_MCA_btl_ofi_mode': '2'
+            'OMPI_MCA_btl_ofi_provider_include': 'cxi'
+            'OMPI_MCA_mtl_ofi_provider_include': 'cxi'
+            'PMIX_MCA_psec': 'native'
+            'PRTE_MCA_ras_base_launch_orted_on_hn': '1'
+            'PRTE_MCA_ras_slurm_use_entire_allocation': '1'
+            'SLURM_MPI_TYPE': 'pmix'
+
